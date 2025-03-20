@@ -2,4 +2,4 @@
 
 Very old, made it during the holidays at uni, is and designed for only C in C++, made in VS15 if not earlier, comes with no guarantees 😁
 
-Has a nifty algorithm to detect valid lines-of-code in multi-line statements though (found at /Codeliner/CodeInspector.cpp).
+Has a nifty algorithm to detect valid lines-of-code in multi-line statements though (found at /Codeliner/CodeInspector.cpp) emphasising my broad understanding of K&R C.
