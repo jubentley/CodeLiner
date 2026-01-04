@@ -6,7 +6,13 @@ Uses Win32API (90's C windows API) to scour a directory for .cpp and .h files an
 
 I installed the infrastructure for threading but never implemented.
 
-## C/C++ Filter
+The algorithm below:
+* Treats multiple statements on a single line as multiple lines of code (LOC) and provides count.
+* Does not include commented out or empty lines.
+* Detects most everything accurately except multiple variables on one line ie: int a = 1, b = 2; as multiple LOC.
+* Is much more complicated than it seems...
+
+## C LOC Detection Algorithm
 
 ```C++
 CodeInspector::CodeInspector(
@@ -53,7 +59,7 @@ loops), or a line with valid ASCII*/
 	while (--strpad > 0) { strcat(FileDirectory_CI, " "); }
 	//while (--strpad) { strcat(FileDirectory_CI, " "); }
 
-	//first string needs max value, infact get into this habbit, (negative function)
+	//first string needs max value
 	printf("%s  %8d\n", FileDirectory_CI, LinesOfCode);
 
 	*returnval = LinesOfCode;//threadsafe
